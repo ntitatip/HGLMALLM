@@ -10,7 +10,7 @@ Identifying circRNA-microRNA interactions (CMI) is a significant biomedical issu
 existing methods. In the independent test set evaluation, it achieved a 3% amd 1% improvement on two datasets. Our method demonstrated the best stability in ten-fold cross-validation on the training set. The edge components with fewer than four nodes were separated and conducted tests to validate that our method performs well. A datasets collected from real scenarios was used to demonstrate the strong predictive ability of our method for identifying unidentified CMI.
 
 
-![Image text](plot/)(Fig. 1.)
+![Image text](Plot/framework.png)(Fig. 1.)
 
 ## Table of Contents
 
