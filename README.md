@@ -52,81 +52,17 @@ To reproduce our results:
 
 We used RNA-ERNIE as our semantic descriptor, which they have packaged into a Docker container for ease of use. Please find it at the following link:
 [RNA-Ernie](https://www.nature.com/articles/s42256-024-00836-4/)
+Here, we adopt a fixed-length segmentation approach for circRNA, with each segment being 512 bases long. For microRNA, direct extraction is sufficient, and we use the 768-dimensional hidden state at the CLS position as the semantic representation. Then, we use a two-layer Bi-LSTM to compress the circRNA sequence. The detailed method can be found in the sequence section.
 
-**Arguments**:
-| **Arguments** | **Detail** |
-| --- | --- |
-| **k_lst** | The required k-value to be selected |
-| **windows_size** | sliding_windows size, default as 510 |
-| **step** | sliding_windows step, default as 50 |
+## 2，Embed using graph contrastive after pairwise matching of semantic features with network structures
+python3 graph_dgi.py
+
+Then, we use a node-wise approach to map the sequence features to nodes. The subsequent steps are to first embed them into the semantic space and the topological space, then encode them using geom-GCN, and finally train using graph contrastive learning.
 
 
-## 2，fine-tuning the models
-```
-cd ./k_difference
-python3 fine_tune.py
-```
-**Arguments**:
-| **Arguments** | **Detail** |
-| --- | --- |
-| **Early_stop** | Early_stop settings, default as 5 |
-| **max_sequences** | max_sequences per batch which should be setting sue to the gpu memory, default as 600 |
-| **gpu_counts** | gpu used for training, default as 2 |
-| **models** | The list of pretrained model for fine-tuning, default as [3, 4, 5, 6] |
-
-## 3，Using fine-tuned model to extract sequences and post-process the vector by multiple-pooling strategy
-```
-cd ./k_difference
-python3 feature_extraction.py
-```
-**Arguments**:
-| **Arguments** | **Detail** |
-| --- | --- |
-| **pooling strategy** | The strategy for pooling the circRNA vector where the choices are global average pooling, global Max pooling, default as global Max pooling |
-| **gpu_counts** | gpu used for training, default as 2 |
-| **models** | The list of pretrained model for fine-tuning, default as [3, 4, 5, 6] |
-
-## 4，Embed using graph contrastive after pairwise matching of semantic features with network structures
-```
-cd ./graph_feature
-python3 results.py
-```
-**Arguments**:
-
-| **Arguments** | **Detail** |
-| --- | --- |
-| **Early_stop** | Early stop, default as 300|
-| **learning_rate** | default as 1E-5 |
-
-## 5，Visualization of results:
+## 3，Visualization of results:
 There are mutliple choices for visualize the results.
-```
-python3  Plot.py -p boxplot
-```
-<img src="plot/final/boxplot9589.svg" alt="Fig. 2." width="500" height="300">
-
-```
-python3  Plot.py -p aucplot
-```
-<img src="plot/final/auc_curves9589.svg" alt="Fig.3." width="500" height="300">
-
-```
-python3  Plot.py -p aucplot
-```
-<img src="plot/final/aupr_curves9589.svg" alt="Fig.3." width="500" height="300">
-
-```
-python3  Plot.py -p barplot
-```
-<img src="plot/final/barplot9589.svg" alt="Fig.3." width="500" height="300">
-
-```
-python3  Plot.py -p bubbleplot
-```
-<img src="plot/final/9589bubble.svg" alt="Fig.3." width="500" height="300">
-
-
-
+python3  Plot.py 
 
 
 
