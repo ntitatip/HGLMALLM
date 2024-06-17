@@ -35,7 +35,6 @@ Our method is tested to work under:
 ### Installation of other dependencies
 * Install [Networkx](https://networkx.github.io/) using ` $ pip install networkx `
 * Install [PyG](https://pypi.org/project/torch-geometric/) using ` $ pip install torch-geometric `
-* Install [lightGBM](https://lightgbm.readthedocs.io/en/stable/) run the following commands in cmd:
 ```
 git clone --recursive https://github.com/microsoft/LightGBM
 cd LightGBM
@@ -53,7 +52,7 @@ To reproduce our results:
 ```
 We used RNA-ERNIE as our semantic descriptor, which they have packaged into a Docker container for ease of use. Please find it at the following link:
 
-[RNA-Ernie](https://www.nature.com/articles/s42256-024-00836-4)
+[RNA-Ernie](https://www.nature.com/articles/s42256-024-00836-4/)
 ```
 **Arguments**:
 | **Arguments** | **Detail** |
