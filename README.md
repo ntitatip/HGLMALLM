@@ -49,11 +49,10 @@ cmake --build . --target ALL_BUILD --config Release
 To reproduce our results:
 
 ## 1，Extract sequence features via RNA-Ernie
-```
-We used RNA-ERNIE as our semantic descriptor, which they have packaged into a Docker container for ease of use. Please find it at the following link:
 
+We used RNA-ERNIE as our semantic descriptor, which they have packaged into a Docker container for ease of use. Please find it at the following link:
 [RNA-Ernie](https://www.nature.com/articles/s42256-024-00836-4/)
-```
+
 **Arguments**:
 | **Arguments** | **Detail** |
 | --- | --- |
