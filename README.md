@@ -63,7 +63,8 @@ Then, we use a node-wise approach to map the sequence features to nodes. The sub
 ## 3，Visualization of results:
 There are mutliple choices for visualize the results.
 python3  Plot.py 
-![Image text](Plot/degree.png)(Fig. 1.)
+![Image text](Plot/degree.png)(Fig. 2.)
+![Image text](Plot/bench.png)(Fig. 3.)
 
 
 # Authors
