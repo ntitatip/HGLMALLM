@@ -49,10 +49,11 @@ cmake --build . --target ALL_BUILD --config Release
 # Quick start
 To reproduce our results:
 
-## 1，Pre-processing the sequence into the required format
+## 1，Extract sequence features via RNA-Ernie
 ```
-cd ./k_difference
-python3 preprocessing.py
+We used RNA-ERNIE as our semantic descriptor, which they have packaged into a Docker container for ease of use. Please find it at the following link:
+
+[RNA-Ernie](https://www.nature.com/articles/s42256-024-00836-4)
 ```
 **Arguments**:
 | **Arguments** | **Detail** |
